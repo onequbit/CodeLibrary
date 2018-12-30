@@ -4,6 +4,18 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Version>1.0.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>2018</Copyright>
+    <PackageId>onequbit.CodeLibrary</PackageId>
+    <Description>personal code library as a nuget package</Description>
+    <PackageProjectUrl>https://github.com/onequbit/CodeLibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/onequbit/CodeLibrary/tree/master/CodeLibrary</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\CodeLibrary</OutputPath>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
 
 </Project>
