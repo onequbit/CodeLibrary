@@ -186,9 +186,9 @@ namespace CodeLibrary
                 list.Add(item);
             }
             return list;
-        }
+        }        
 
-        public static int[] ToArray(this HashSet<int> source)
+        public static T[] ToArray<T>(this HashSet<T> source)
         {
             return source.ToList().ToArray();
         }
