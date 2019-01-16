@@ -1,4 +1,4 @@
-# OneQubit's CodeLibrary
+# OneQubit's CodeLibrary (.NET Core)
 
 This is my personal Code Library, which I will be maintaining on GitHub and distributing as a NuGet package
 
