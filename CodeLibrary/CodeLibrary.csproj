@@ -1,23 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Version>1.0.0.3</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Copyright>2018</Copyright>
-    <PackageId>onequbit.CodeLibrary</PackageId>
-    <Description>personal code library as a nuget package</Description>
-    <PackageProjectUrl>https://github.com/onequbit/CodeLibrary</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/onequbit/CodeLibrary/tree/master/CodeLibrary</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0.6</Version>
+    <Description>Personal code library published as a Nuget package. Use at your own peril.</Description>
+    <Copyright>2019</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <PackageProjectUrl>https://github.com/onequbit/CodeLibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/onequbit/CodeLibrary</RepositoryUrl>
+    <RepositoryType>.NET Standard Class Library</RepositoryType>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\</OutputPath>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DefineConstants />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\</OutputPath>
   </PropertyGroup>
 
 </Project>
