@@ -6,6 +6,8 @@ namespace CodeLibrary
 {
     public static partial class ExtensionMethods
     {
+        public static bool IsNullOrEmpty(this string str) => string.IsNullOrEmpty(str);
+
         public static void ToConsole(this string str) => Console.WriteLine(str);                
 
         public static void Print(this string str) => Console.Write(str);

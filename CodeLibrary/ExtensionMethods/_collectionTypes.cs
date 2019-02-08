@@ -12,11 +12,11 @@ namespace CodeLibrary
         public static string Join<T>(this T[] array, string str)
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < array.Length; i++)
+            int index = 1;
+            foreach (T item in array)
             {
-                sb.Append(array[i]);
-                if (i != array.Length - 1)
-                    sb.Append(str);
+                sb.Append(item.ToString());
+                sb.Append((index++ < array.Length) ? str : "");
             }
             return sb.ToString();
         }

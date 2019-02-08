@@ -2,13 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0.6</Version>
+    <Version>1.0.0.7</Version>
     <Description>Personal code library published as a Nuget package. Use at your own peril.</Description>
     <Copyright>2019</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/onequbit/CodeLibrary</PackageProjectUrl>
     <RepositoryUrl>https://github.com/onequbit/CodeLibrary</RepositoryUrl>
     <RepositoryType>.NET Standard Class Library</RepositoryType>
+    <AssemblyName>CodeLibrary</AssemblyName>
+    <PackageId>onequbit.CodeLibrary</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
