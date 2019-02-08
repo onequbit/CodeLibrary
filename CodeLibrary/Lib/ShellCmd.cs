@@ -22,7 +22,7 @@ namespace CodeLibrary
             string _error = string.Empty;
             _process = new Process
             {
-                StartInfo = { FileName = "cmd", Arguments = "cmd /c " + arguments }
+                StartInfo = { FileName = "cmd", Arguments = $"/c {command} {arguments}" }
             };
             ShellCmd.Invoke( _process, ref _output, ref _error);
             this.Output = _output;
@@ -35,15 +35,23 @@ namespace CodeLibrary
 
         public static string Invoke(string command, string argumentStr = "")
         {
-            ShellCmd sc = new ShellCmd(command, argumentStr);
-            return sc.Output;            
+            string output = string.Empty;
+            string _ignoreErr = string.Empty;
+            Invoke(command, argumentStr, ref output, ref _ignoreErr);
+            return output;            
         }
 
         public static void Invoke(string command, string argumentStr, ref string output, ref string error)
         {
-            ShellCmd sc = new ShellCmd(command, argumentStr);
-            output = sc.Output;
-            error = sc.Error;            
+            Process p = new Process
+            {
+                StartInfo =
+                {
+                    FileName = "cmd",
+                    Arguments = $"/c {command} {argumentStr}"
+                }
+            };
+            Invoke(p, ref output, ref error);            
         }
 
         public static void Invoke(Process p, ref string output, ref string error)
