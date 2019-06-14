@@ -27,16 +27,15 @@ namespace CodeLibrary
 
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            source.ThrowIfNull("source");
-            action.ThrowIfNull("action");
+            source.ThrowIfNull("ForEach<T> source");
+            action.ThrowIfNull("ForEach<T> action");
             foreach (T element in source)
             {
                 action(element);
             }
         }
 
-        public static void ToConsole<T>(
-            this IEnumerable<T> list, string formatStr = "")
+        public static void ToConsole<T>(this IEnumerable<T> list, string formatStr = "")
         {
             foreach (var item in list)
             {
@@ -69,11 +68,6 @@ namespace CodeLibrary
             return set.Aggregate((long)1, (x, y) => x = (long)(x * y));
         }
 
-        //public static int Sum(this IEnumerable<int> set)
-        //{
-        //    return set.Aggregate(0, (x, y) => x = x + y);
-        //}
-
         #endregion IEnumerable
 
         #region List<T>
@@ -99,7 +93,7 @@ namespace CodeLibrary
         public static HashSet<T> ToHashSet<T>(this List<T> set)
         {
             HashSet<T> result = new HashSet<T> { };
-            foreach(var item in set)
+            foreach (var item in set)
             {
                 result.Add(item);
             }
@@ -186,14 +180,13 @@ namespace CodeLibrary
                 list.Add(item);
             }
             return list;
-        }        
+        }
 
         public static T[] ToArray<T>(this HashSet<T> source)
         {
-            return source.ToList().ToArray();
+            T[] result = new T[source.Count];
+            source.CopyTo(result);
+            return result;
         }
-
-        #endregion HashSet<T>
-
     }
 }
