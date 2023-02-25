@@ -188,5 +188,7 @@ namespace CodeLibrary
             source.CopyTo(result);
             return result;
         }
+
+        #endregion HashSet<T>
     }
 }
